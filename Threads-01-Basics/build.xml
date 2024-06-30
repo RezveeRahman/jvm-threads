@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- @Author: Rezvee Rahman -->
+<!-- @Last modified: 05/31/2024 -->
+
+<!-- ANT BUILD FILE -->
+<project
+    name="Thread Basics"
+    default="info"
+    basedir=".">
+
+    <description>
+        ANT-VERSION: 1.10.14
+        Thread basics will go over some basic concepts and such
+        1. Atomicity
+        2. Thread safety
+        3. Locks, Liveness, and Race conditions
+    </description>
+
+    <!-- Properties -->
+    <!--
+        We can thing of these as variables. Also alot of the
+        properties follow the `Maven` file structure and directory
+        of a project.
+    -->
+    <property name="root.dir" location="." />
+    <property name="src.dir" location="src/main/java" />
+    <property name="resource.dir" location="src/main/resource" />
+    <property name="classpath" location="${src.dir}/classes" />
+    <property file="prop.txt" />
+
+    <!-- External Jar properties -->
+    <!-- CHANGE THIS PROPERTY LOCATION AND NAME -->
+    <!-- <property name="jar.dir" location="" /> -->
+
+    <!-- Targets -->
+    <target name="info"
+    description="
+        Default, get's information and prints it to the terminal"
+    >
+        <echo message="Project Name: ${ant.project.name}" />
+        <echo message="Project Directory: [${basedir}]" />
+        <echo message="Ant: version ${ant.version}" />
+        <echo message="Java-JDK-Version: ${ant.java.version}" />
+        <echo message="             -- PROJECT DETAILS --" />
+        <echo message="Root Directory:      ${root.dir}" />
+        <echo message="Source Directory:    ${src.dir}" />
+        <echo message="Classpath:           ${classpath}" />
+    </target>
+
+
+    <!-- build project -->
+    <target name="build" description="Builds java project">
+        <echo message="Building project"/>
+        <echo message="project directory (source dir): ${src.dir}"/>
+        <echo message="class path directory (classpath dir): ${src.dir}/.classes" />
+        <echo message="Compilation target: ${src.dir}
+Classpath: ${classpath}" />
+        <mkdir dir="${classpath}"/>
+        <javac
+            srcdir="${src.dir}"
+            destdir="${classpath}"
+            />
+    </target>
+
+    <!-- Unit tests -->
+    <target name="unit-test" description="Runs unit test." depends="build">
+        <echo message="Starting to run unit tests" />
+    </target>
+
+    <!-- jar project -->
+    <target name="jar" description="Creates a project `jar`.">
+        <echo message="Packaging project into a JAR file"/>
+    </target>
+
+    <!-- clean project -->
+    <target name="clean"
+            description="Cleans up project compilation."
+    >
+        <delete verbose="true">
+            <fileset dir="${classpath}" includes="*.class" />
+            <fileset dir="${root.dir}" includes="*.jar" />
+        </delete>
+    </target>
+
+</project>
