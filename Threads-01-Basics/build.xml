@@ -78,7 +78,7 @@ Classpath: ${classpath}" />
             description="Cleans up project compilation."
     >
         <delete verbose="true">
-            <fileset dir="${classpath}" includes="*.class" />
+            <fileset dir="${classpath}/main/java/" includes="*.class" />
             <fileset dir="${root.dir}" includes="*.jar" />
         </delete>
     </target>
