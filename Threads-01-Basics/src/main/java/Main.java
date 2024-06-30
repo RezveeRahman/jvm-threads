@@ -3,7 +3,7 @@
  * @date: 06/29/2024
  * 
  * @description: Doing very basic thread implementation and
- * understanding jvm threads.
+ * understanding jvm threads. EVERYTHING IS NOT SYNCHRONIZED
  */
 
 package main.java;
@@ -33,11 +33,14 @@ public class Main {
         Thread t1 = new Thread(
             () -> {
                 int i = 0;
+                long sleepTime;
+
                 try {
                     while (i < 10) {
-                        Long sleepTime = RANDOM.nextLong(SLEEP * 1000);
+                        // sleepTime = RANDOM.nextLong(SLEEP * 1000);
+                        sleepTime = SLEEP * 1000;
                         reference.addValue(RANGE);
-                        System.out.println("Sleeping for: " + sleepTime);
+                        System.out.println("Sleeping for: " + SLEEP * 1000);
                         Thread.sleep(sleepTime);
                         i++;
                     }
@@ -49,9 +52,12 @@ public class Main {
         Thread t2 = new Thread(
             () -> {
                 int i = 0;
+                long sleepTime;
+
                 try {
                     while(i < 10) {
-                        Long sleepTime = RANDOM.nextLong(SLEEP * 1000);
+                        // sleepTime = RANDOM.nextLong(SLEEP * 1000);
+                        sleepTime = SLEEP * 1000;
                         reference.removeValue(RANGE);
                         System.out.println("Sleeping for: " + sleepTime);
                         Thread.sleep(sleepTime);
