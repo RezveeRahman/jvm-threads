@@ -33,6 +33,9 @@ public class Bingo extends Thread {
     public static void execute() throws Exception {
         bingos[0].start();
         bingos[1].start();
+
+        bingos[0].join();
+        bingos[1].join();
     }
 
     /**
