@@ -1,7 +1,7 @@
 /**
  * @author: Rezvee Rahman
  * @date: 07/07/2024
- * 
+ *
  * @description: Main entrypoint of the program.
  */
 

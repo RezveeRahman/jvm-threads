@@ -1,7 +1,7 @@
 /**
  * @author: Rezvee Rahman
  * @date: 07/08/2024
- * 
+ *
  * @description: This example takes a look at the Locking LockTwo
  * algorithm. This algorithm requires 2 threads. Which ever thread comes
  * first will execute first. Unfortunately if the other thread doesn't
@@ -20,7 +20,7 @@ public class LockTwoClass implements Lock {
      * ------------------------------------------------------------------- */
 
     /**
-     * The `lock` method here will yield for a thread that is waiting. 
+     * The `lock` method here will yield for a thread that is waiting.
      */
     @Override
     public void lock(Thread i) {

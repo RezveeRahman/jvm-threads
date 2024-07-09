@@ -1,7 +1,7 @@
 /**
  * @author: Rezvee Rahman
  * @date: 07/08/2024
- * 
+ *
  * @description: The peterson lock is basically combining  the OneClass
  * & TwoClass locks together. The algorithm should be Starvation-free,
  * deadlock-free, and satisfies mutual exclusion. The algorithm works
@@ -39,7 +39,7 @@ public class PetersonLock implements Lock {
     }
 
     /**
-     * The Peterson algorithm algorithm is the same as the LockOne algorithm. 
+     * The Peterson algorithm algorithm is the same as the LockOne algorithm.
      */
     @Override
     public void unlock(Thread t) {
