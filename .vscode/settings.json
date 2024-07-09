@@ -1,0 +1,24 @@
+{
+    /* Editor settings */
+    "editor.rulers": [72, 80],
+    "editor.renderWhitespace": "all",
+    "editor.inlayHints.enabled": "offUnlessPressed",
+    "editor.trimAutoWhitespace": true,
+
+    /* Java Workspace settings */
+    "java.configuration.runtimes": [
+        {
+            "name": "JavaSE-21",
+            "path": "/usr/lib/jvm/jdk-21-oracle-x64",
+            "sources": "/usr/lib/jvm/jdk-21-oracle-x64/lib/src.zip",
+            "javadoc": "https://docs.oracle.com/en/java/javase/21/docs/api/",
+            "default": true,
+        }
+    ],
+
+    "java.server.launchMode": "Standard",
+
+    /* Redhat java extensions */
+    "redhat.telemetry.enabled": false,
+    "java.format.settings.url": "eclipse-formatter.xml"
+}
